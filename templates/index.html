@@ -108,9 +108,11 @@
         $.ajax({
           type: "POST",
           url: "/api/like",
-          data: { sample_give: "샘플데이터" },
+          data: { name_give: name },
+          // FIXME: 서버에서 보내줄 name_give는 함수에서 파라미터로 받아올 name이라는 뜻.
           success: function (response) {
             alert(response["msg"]);
+            window.location.reload();
           },
         });
       }
